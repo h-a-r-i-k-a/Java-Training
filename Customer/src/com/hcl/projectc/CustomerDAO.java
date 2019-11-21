@@ -1,0 +1,122 @@
+package com.hcl.projectc;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+
+
+
+
+
+public class CustomerDAO {
+    static List<Customer> lstCustomer=null;
+    static ResourceBundle rb=null;
+    static{
+        lstCustomer=new ArrayList<Customer>();
+        rb=ResourceBundle.getBundle("customer");
+    }
+    public String addCustomerDao(Customer customer){
+        lstCustomer.add(customer);
+        return rb.getString("create");
+    }
+    public List<Customer> showCustomerDao(){
+        return lstCustomer;
+    }
+    public Customer searchCustomerDao(int CustId){
+        Customer objCustomer=null;
+        for (Customer customer : lstCustomer) {
+            if(customer.getCustId()==CustId){
+                objCustomer=customer;
+                
+            }
+            
+        }
+        return objCustomer;
+        
+    }
+    public String deleteCustomerDao(int CustId){
+        String result="";
+        Customer customer=searchCustomerDao(CustId);
+        if(customer!=null){
+            lstCustomer.remove(customer);
+           return rb.getString("delete");
+            
+        }else{
+            return rb.getString("not found");
+        }
+        
+        
+    }
+    public String updateCustomerDao( Customer objCustomer){
+        Customer customer=searchCustomerDao(objCustomer.getCustId());
+        String result="";
+        if(customer!=null){
+            for (Customer c : lstCustomer) {
+                if(c.getCustId()==objCustomer.getCustId()){
+                    c.setCustName(objCustomer.getCustName());
+                    c.setAnnualPremium(objCustomer.getAnnualPremium());
+                    c.setModalPremium(objCustomer.getModalPremium());
+                    c.setPaymentMode(objCustomer.getPaymentMode());
+                }
+                
+            }
+            return rb.getString("upd");
+            
+        }else{
+            return rb.getString("not found");
+        }
+        
+    }
+    public void writeCustomertFileDao() {
+        try {
+            FileOutputStream fout=new FileOutputStream("c:/files/customer.txt");
+            ObjectOutputStream objout=new ObjectOutputStream(fout);
+            objout.writeObject(lstCustomer);
+            objout.close();
+            fout.close();
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+    
+    public void readCustomerFileDao() {
+        try {
+            FileInputStream fin=new FileInputStream("c:/files/customer.txt");
+            ObjectInputStream objin=new ObjectInputStream(fin);
+            lstCustomer =(List<Customer>)objin.readObject();
+            objin.close();
+            fin.close();
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        
+    }
+   
+ 
+   
+                
+            
+            
+        
+            
+        }
+       
+    
