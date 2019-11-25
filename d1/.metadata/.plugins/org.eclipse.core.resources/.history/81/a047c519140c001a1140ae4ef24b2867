@@ -1,0 +1,17 @@
+package com.hcl.democollections;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class MapDemo1 {
+    public static void main(String[] args) {
+        Map names=new HashMap();
+        names.put("1", "harika");
+        names.put("2", "mounika");
+        names.put("3", "laxmi");
+        names.put("4", "hemanth");
+        names.put("5", "sai");
+        
+    }
+
+}

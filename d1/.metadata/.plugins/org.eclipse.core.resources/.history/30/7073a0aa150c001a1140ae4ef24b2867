@@ -1,0 +1,15 @@
+package com.hcl.democollections;
+
+import java.util.Hashtable;
+import java.util.Map;
+
+public class MapDemo2 {
+    public static void main(String[] args) {
+        Map<String, Double> m=new Hashtable<String,Double>();
+        m.put("poornesh", 67745.54);
+        m.put("priyanka", 77554.45);
+        m.put("priya", 88555.78);
+        m.put("bharat", 77455.44);
+    }
+
+}

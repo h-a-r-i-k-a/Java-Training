@@ -1,0 +1,33 @@
+package com.hcl.project;
+
+import java.util.List;
+import java.util.Scanner;
+
+public class StudentMain {
+    public static void searchStudent(){
+        
+    }
+    public static void showStudent(){
+        StudentBAL obj=new StudentBAL();
+        List<Student> students=obj.showStudentBal();
+        for (Student student : students) {
+            System.out.println(student);
+            
+        }
+        
+    }
+    public static void addStudent(){
+        Student objStudent=new  Student();
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter student no");
+        objStudent.setSno(Integer.parseInt(sc.nextLine()));
+        System.out.println("enter student name");
+        objStudent.setName(sc.nextLine());
+        System.out.println("enter student city");
+        objStudent.setCity(sc.nextLine());
+        System.out.println("enter student cgp");
+        objStudent.setCgp(Double.parseDouble(sc.nextLine()));
+        StudentBAL obj=new StudentBAL()
+    }
+
+}

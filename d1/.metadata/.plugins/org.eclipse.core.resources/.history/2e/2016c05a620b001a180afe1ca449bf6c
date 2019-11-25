@@ -1,0 +1,21 @@
+package com.hcl.project;
+
+import java.util.List;
+import java.util.Scanner;
+
+public class StudentMain {
+    public static void showStudent(){
+        StudentBAL obj=new StudentBAL();
+        List<Student> student=obj.showStudentBal();
+        for (Student student : students) {
+            System.out.println(student);
+            
+        }
+        
+    }
+    public static void addStudent(){
+        Student objStudent=new  Student();
+        Scanner sc=new Scanner(System.in)
+    }
+
+}

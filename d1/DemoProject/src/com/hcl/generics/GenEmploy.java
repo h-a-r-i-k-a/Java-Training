@@ -1,0 +1,23 @@
+package com.hcl.generics;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.hcl.collections.Employ;
+
+public class GenEmploy {
+    public static void main(String[] args) {
+        List<Employ> employ=new ArrayList<Employ>();
+        employ.add(new Employ(1,"niharika",67455));
+        employ.add(new Employ(1,"laxmi",67455));
+        employ.add(new Employ(1,"navya",67455));
+        employ.add(new Employ(1,"hemanth",67455));
+        employ.add(new Employ(1,"deepak",67455));
+        for (Employ emp : employ) {
+            System.out.println(employ);
+            
+            
+        }
+    }
+
+}

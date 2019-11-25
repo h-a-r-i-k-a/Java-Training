@@ -1,0 +1,15 @@
+package com.hcl.democollections;
+
+import java.util.Comparator;
+
+
+public class DeptComparator implements Comparator {
+
+  @Override
+    public int compare(Object o3, Object o4) {
+    Employ e1=(Employ)o3;
+    Employ e2=(Employ)o4;
+    return e2.dept.compareTo(e1.dept);
+    }
+
+}

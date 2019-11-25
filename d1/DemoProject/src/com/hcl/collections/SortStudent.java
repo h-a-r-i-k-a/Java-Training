@@ -1,0 +1,22 @@
+package com.hcl.collections;
+
+import java.util.Comparator;
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+public class SortStudent {
+    public static void main(String[] args) {
+       CgpComparator c=new CgpComparator();
+        SortedSet s=new TreeSet();
+        s.add(new Student(1,"niharika","x",67));
+        s.add(new Student(2,"laxmi","y",55));
+        s.add(new Student(1,"navya","c",55));
+        s.add(new Student(1,"hemanth","v",45));
+        s.add(new Student(1,"deepak","n",6));
+        for (Object object : s) {
+            Student e=(Student)object;
+            System.out.println(object);
+    }
+
+    }
+}

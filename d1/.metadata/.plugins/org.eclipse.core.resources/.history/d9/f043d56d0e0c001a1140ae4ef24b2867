@@ -1,0 +1,76 @@
+package com.hcl.projectc;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+
+
+
+public class CustomerDAO {
+    static List<Customer> lstCustomer=null;
+    static{
+        lstCustomer=new ArrayList<Customer>();
+    }
+    public String addCustomerDao(Customer customer){
+        lstCustomer.add(customer);
+        return "Student created successfully...";
+    }
+    public List<Customer> showCustomerDao(){
+        return lstCustomer;
+    }
+    public Customer searchCustomerDao(int CustId){
+        Customer objCustomer=null;
+        for (Customer customer : lstCustomer) {
+            if(customer.getCustId()==CustId){
+                
+            }
+            
+        }
+        return objCustomer;
+        
+    }
+    public String deleteCustomerDao(int CustId){
+        String result="";
+        Customer customer=searchCustomerDao(CustId);
+        if(customer!=null){
+            lstCustomer.remove(customer);
+            result="customer record deleted successfully";
+            
+        }else{
+            result="customer record not found";
+        }
+        return result;
+        
+    }
+    public String updateCustomerDao( Customer objCustomer){
+        Customer customer=searchCustomerDao(objCustomer.getCustId());
+        String result="";
+        if(customer!=null){
+            for (Customer c : lstCustomer) {
+                if(c.getCustId()==objCustomer.getCustId()){
+                    c.setCustName(objCustomer.getCustName());
+                    c.setAnnualPremium(objCustomer.getAnnualPremium());
+                    c.setModalPremium(objCustomer.getModalPremium());
+                    c.setPaymentMode(objCustomer.getPaymentMode());
+                }
+                
+            }
+            result="customer record updated";
+            
+        }else{
+            result="customer record not found";
+        }
+        return result;
+    }
+   
+ 
+   
+                
+            
+            
+        
+            
+        }
+       
+    
