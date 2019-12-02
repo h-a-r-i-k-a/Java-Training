@@ -1,4 +1,4 @@
-package com.hcl.employ;
+package com.hcl.department;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class DaoConnection {
-	public static Connection getConnection(){
+public static Connection getConnection(){
 		
 		ResourceBundle rb=ResourceBundle.getBundle("db");
 		String driver=rb.getString("driver");
@@ -16,15 +16,17 @@ public class DaoConnection {
 		Connection con=null;
 		try {
 			Class.forName(driver);
-			con=DriverManager.getConnection(url,user,pwd);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+		try {
+			con=DriverManager.getConnection(url,user,pwd);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return con;
-	}
 
+}
 }
