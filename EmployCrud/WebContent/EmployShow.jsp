@@ -36,14 +36,14 @@ while(rs.next()){
   <td> <%=rs.getString("dept") %>  </td>
   <td> <%=rs.getString("desig") %>  </td>
   <td> <%=rs.getInt("basic") %> </td>
-  <td> <a href="UpdateEmploy.jsp">Update</a> </td>
-  <td> <a href="DeleteEmploy.jsp">Delete</a> </td>
+ <td><a href="UpdateEmploy.jsp?empno=<%=rs.getInt("empno")%>">Update</a></td>
+  <td><a href="DeleteEmploy.jsp?empno=<%=rs.getInt("empno")%>">Delete</a> </td>
 </tr>
 <%
 }
 %>
 </table>
 <a href="AddEmploy.jsp">Add Employ</a>
-<a href="DeleteEmploy.jsp">Delete Employ</a>
+
 </body>
 </html>
