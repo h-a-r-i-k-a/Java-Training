@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<p>hi i am Harika<b>Bold</b>font</p>
+<p>my father name is jayakumar<i>Italic</i>font</p>
+<p>my mother name is sunitha<u>underline</u>font</p>
+<p>this is an example<strike>strike line</strike>font</p>
+
+
+
+</body>
+</html>

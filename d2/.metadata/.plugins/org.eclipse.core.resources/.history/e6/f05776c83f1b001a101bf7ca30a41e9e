@@ -1,0 +1,16 @@
+package com.hcl.employ;
+
+import java.sql.Connection;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        Connection con=DaoConnection.getConnection();
+        System.out.println("Connected...");
+    }
+}

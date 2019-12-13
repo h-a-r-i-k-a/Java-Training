@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<p>Names are</p>
+<ol>type="1"</ol>
+<li>Poornesh</li>
+<li>niharika</li>
+<li>sravani</li>
+<li>roshini</li>
+<li>shaleena</li>
+</ol>
+<hr/>
+<p>Names are</p>
+<ol type="A" start="5">
+<li>Poornesh</li>
+<li>niharika</li>
+<li>sravani</li>
+<li>roshini</li>
+<li>shaleena</li>
+</ol>
+<hr/>
+<p>Names are</p>
+<ol type="i">
+<li>Poornesh</li>
+<li>niharika</li>
+<li>sravani</li>
+<li>roshini</li>
+<li>shaleena</li>
+</ol>
+
+</body>
+</html>

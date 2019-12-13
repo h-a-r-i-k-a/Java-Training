@@ -1,0 +1,27 @@
+package com.hcl.bank;
+
+import static org.junit.Assert.*;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class TestDaoConnection {
+    static  DaoConnection con=null;
+    @BeforeClass
+    public static void setUp(){
+        
+        con=new DaoConnection();
+    }
+
+    @Test
+    public void testConnection() {
+      
+        con=new DaoConnection();
+        DaoConnection.getConnection();
+        assertNull(DaoConnection.getConnection());
+        
+       
+    }
+    
+    
+
+}
