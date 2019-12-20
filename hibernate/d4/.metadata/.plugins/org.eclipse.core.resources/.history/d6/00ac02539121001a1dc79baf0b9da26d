@@ -1,0 +1,11 @@
+package com.hcl.hib;
+
+public class Department {
+	private int Deptno;
+	private String Dname;
+	private String City;
+	private String loc;
+	private String head;
+	
+
+}

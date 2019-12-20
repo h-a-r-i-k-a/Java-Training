@@ -1,0 +1,28 @@
+package com.hcl.hib;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+public class ManageEmployee {
+	private static SessionFactory factory;
+	public Integer addEmployee(String fname,String lname,int salary){
+		Session session = factory.openSession();
+		Transaction tx=null;
+		Integer employeeId=null;
+		try {
+			tx=session.beginTransaction();
+			Employee employee=new Employee(fname,lname,salary);
+			employId=(Integer)session.save(employee);
+			tx.commit();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if(tx!=null)tx.rollback();
+		session.close();
+		return employeeId;
+		
+	}
+
+}
